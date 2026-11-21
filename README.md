@@ -1,3 +1,4 @@
+It's Just A Prototype Not offically Owned By Aror.
 🏛️ Aror University Campus Hub & Marketplace
 > **Group Project for CSC101 **  
 > **Department of Cyber-Security**  
