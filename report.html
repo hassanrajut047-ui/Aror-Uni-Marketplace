@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report an Item | Aror Uni Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar"> 
+        <div class="nav-brand">
+            <img src="images/logo.jpg" alt="Aror University Logo" class="nav-logo">
+            <span>Aror Uni Marketplace</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="report.html" class="active">Report Item</a></li>
+            <li><a href="admin.html">Admin Panel</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Report a Lost or Found Item</h1>
+        <p>Fill in the details below to help your fellow students. All fields are required.</p>
+    </section>
+
+    <!-- Form Section -->
+    <main class="form-container">
+        <form id="itemForm" novalidate>
+            <div class="form-group">
+                <label for="studentName">Student Name</label>
+                <input type="text" id="studentName" placeholder="e.g., Ahmed Ali" required>
+                <span class="error-msg" id="err-studentName"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="rollNumber">Roll Number</label>
+                <input type="text" id="rollNumber" placeholder="e.g., 2024-CS-001" required>
+                <span class="error-msg" id="err-rollNumber"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="itemTitle">Item Title</label>
+                <input type="text" id="itemTitle" placeholder="e.g., Black Leather Wallet" required>
+                <span class="error-msg" id="err-itemTitle"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="lost">Lost</option>
+                    <option value="found">Found</option>
+                    <option value="marketplace">For Sale</option>
+                </select>
+                <span class="error-msg" id="err-category"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location (Building/Area)</label>
+                <input type="text" id="location" placeholder="e.g., Main Library, Room 204" required>
+                <span class="error-msg" id="err-location"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number (11 digits)</label>
+                <input type="tel" id="phone" placeholder="e.g., 03001234567" required>
+                <span class="error-msg" id="err-phone"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="4" placeholder="Describe the item in detail..." required></textarea>
+                <span class="error-msg" id="err-description"></span>
+            </div>
+            <div class="form-group">
+                <label for="itemImage">Item Photo (Optional — JPG/PNG, max 1.5 MB)</label>
+                <input type="file" id="itemImage" accept="image/jpeg, image/png, image/webp">
+                <span class="error-msg" id="err-itemImage"></span>
+                <img id="imagePreview" src="" alt="Selected item preview" class="hidden" style="margin-top: 10px; max-height: 180px; width: 100%; object-fit: cover; border-radius: 6px; border: 1px solid #ddd;">
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Report</button>
+            
+            <!-- Dynamic Confirmation Message -->
+            <div id="successMsg" class="success-msg hidden">
+                ✅ <strong>Success!</strong> Your item has been reported successfully. It will appear in the catalog shortly.
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Group Project: CSC101</h3>
+            <p><strong>Team Members:</strong></p>
+            <ul>
+                <li><strong>Muhammad Hassan Rajput</strong> -  SAP ID: 5000-208-12</li>
+                <li><strong>Mir Atif Ali </strong> - SAP ID: 5000-208-11</li>
+                <li><strong>Syed Tahzeeb Hyder</strong> - Roll No: 5000-204-29</li>
+                <li><strong>Uneeb Ali</strong> - Roll No: 5000-204-37</li>
+            </ul>
+            <p>&copy; 2026 Aror University Department of <strong>CYBER-SECURITY</strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

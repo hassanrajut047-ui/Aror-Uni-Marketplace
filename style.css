@@ -1,0 +1,509 @@
+/* --- CSS Variables for Consistent Theming --- */
+:root {
+    --primary-color: #2c3e50; /* Dark Blue */
+    --secondary-color: #3498db; /* Light Blue */
+    --accent-color: #e74c3c; /* Red for Lost */
+    --success-color: #27ae60; /* Green for Found/Success */
+    --market-color: #f39c12; /* Orange for Marketplace */
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --white: #fff;
+    --border-color: #ddd;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Reset & Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.9rem 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--white);
+    min-width: 0;
+}
+
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+/* --- Hero Section (Home Page) --- */
+.hero {
+    background: linear-gradient(rgba(30, 41, 59, 0.72), rgba(30, 41, 59, 0.72)),
+                url('images/campus-gate.jpg') center/cover no-repeat,
+                url('images/campus.jpg') center/cover no-repeat,
+                #2c3e50;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    opacity: 0.95;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Secondary Page Headers (Catalog & Report Pages) --- */
+.page-header {
+    background: linear-gradient(rgba(30, 41, 59, 0.78), rgba(30, 41, 59, 0.78)),
+                url('images/campus-sunset.jpg') center/cover no-repeat,
+                #2c3e50;
+    text-align: center;
+    padding: 3.25rem 1rem;
+    color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    color: var(--white);
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: #ecf0f1;
+    font-size: 1.05rem;
+}
+
+/* --- Controls (Home) --- */
+.controls {
+    max-width: 1200px;
+    margin: 2rem auto 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.controls h2 {
+    margin-bottom: 12px;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.filter-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- Item Grid & Cards (Home) --- */
+.item-grid {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
+
+.item-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-container {
+    height: 190px;
+    position: relative;
+    background-color: #e2e8f0;
+    overflow: hidden;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.badge-lost { background-color: var(--accent-color); }
+.badge-found { background-color: var(--success-color); }
+.badge-marketplace { background-color: var(--market-color); }
+
+.card-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.card-loc,
+.card-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    margin: 10px 0 15px;
+    color: #444;
+    flex-grow: 1;
+}
+
+.card-footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    font-size: 0.85rem;
+}
+
+.status {
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.status.open { background-color: #fde8e8; color: var(--accent-color); }
+.status.claimed { background-color: #e6f4ea; color: var(--success-color); }
+.status.sale { background-color: #fef3c7; color: var(--market-color); }
+
+.contact {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+#no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* --- Styled Data Table (Catalog Page) --- */
+.table-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.table-container h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+.tag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.tag-lost { background-color: var(--accent-color); }
+.tag-found { background-color: var(--success-color); }
+.tag-market { background-color: var(--market-color); }
+
+/* --- Form Container & Validation (Report Page) --- */
+.form-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.error-input {
+    border-color: var(--accent-color) !important;
+    background-color: #fff8f8;
+}
+
+.error-msg {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-top: 4px;
+}
+
+.btn-submit {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #2980b9;
+}
+
+.success-msg {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #e6f4ea;
+    border: 1px solid var(--success-color);
+    color: #137333;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+}
+
+.footer-content ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 12px 16px;
+    }
+
+    .hero {
+        min-height: 240px;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}

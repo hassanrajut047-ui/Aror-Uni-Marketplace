@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Aror Uni Marketplace</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="images/logo.jpg" alt="Aror University Logo" class="nav-logo" onerror="this.style.display='none'">
+            <span>Aror Uni Admin Panel</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="report.html">Report Item</a></li>
+            <li><a href="admin.html" class="active">Admin</a></li>
+        </ul>
+    </nav>
+
+    <!-- Admin Login Overlay (Simple Passcode Gate for Viva Demo) -->
+    <div id="loginGate" class="login-gate">
+        <div class="login-card">
+            <h2>🔒 Admin Access</h2>
+            <p>Enter admin passcode to manage reported items.</p>
+            <input type="password" id="adminPasscode" placeholder="Enter passcode (Hint: aror123)">
+            <button id="loginBtn" class="btn-primary">Unlock Dashboard</button>
+            <p id="loginError" class="error-msg hidden">Incorrect passcode. Try again.</p>
+        </div>
+    </div>
+
+    <!-- Main Admin Dashboard -->
+    <main id="adminDashboard" class="dashboard-container hidden">
+        <header class="dashboard-header">
+            <div>
+                <h1>Reports Management Dashboard</h1>
+                <p>Review, update status, or remove items submitted via the Report portal.</p>
+            </div>
+            <div class="header-actions">
+            <div style="display: flex; gap: 10px;"></div>
+                <button id="resetStorageBtn" class="btn-warning">Reset to Default Data</button>
+                <button id="logoutBtn" class="btn-secondary">Lock Panel</button>
+                <button id="exportBtn" class="btn-success">📥 Download Backup (.json)</button>
+                <button id="importTriggerBtn" class="btn-primary" style="width: auto;">📤 Restore Backup</button>
+                <input type="file" id="importFile" accept=".json" class="hidden">
+            </div>
+        </header>
+
+        <!-- Summary Stats Cards -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Total Reports</span>
+                <span class="stat-value" id="statTotal">0</span>
+            </div>
+            <div class="stat-card stat-open">
+                <span class="stat-label">Open / Active</span>
+                <span class="stat-value" id="statOpen">0</span>
+            </div>
+            <div class="stat-card stat-claimed">
+                <span class="stat-label">Resolved / Claimed</span>
+                <span class="stat-value" id="statClaimed">0</span>
+            </div>
+            <div class="stat-card stat-market">
+                <span class="stat-label">Marketplace</span>
+                <span class="stat-value" id="statMarket">0</span>
+            </div>
+        </section>
+
+        <!-- Controls & Filter -->
+        <section class="admin-controls">
+            <input type="text" id="adminSearch" placeholder="Filter reports by title, reporter, roll no, or location...">
+            <select id="adminStatusFilter">
+                <option value="all">All Statuses</option>
+                <option value="Open">Open</option>
+                <option value="Claimed">Claimed</option>
+                <option value="For Sale">For Sale</option>
+            </select>
+        </section>
+
+        <!-- Connected Reports Table -->
+        <section class="table-wrapper">
+            <table id="adminTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Item Title</th>
+                        <th>Category</th>
+                        <th>Reporter & Roll No</th>
+                        <th>Location & Date</th>
+                        <th>Contact</th>
+                        <th>Status</th>
+                        <th>Admin Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="adminTableBody">
+                    <!-- Populated dynamically from localStorage via admin.js -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Group Project: CSC101</h3>
+            <p><strong>Team Members:</strong></p>
+            <ul>
+                <li><strong>Muhammad Hassan Rajput</strong> -  SAP ID: 5000-208-12</li>
+                <li><strong>Mir Atif Ali </strong> - SAP ID: 5000-208-11</li>
+                <li><strong>Syed Tahzeeb Hyder</strong> - Roll No: 5000-204-29</li>
+                <li><strong>Uneeb Ali</strong> - Roll No: 5000-204-37</li>
+            </ul>
+            <p>&copy; 2026 Aror University Department of <strong>CYBER-SECURITY</strong></p>
+        </div>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>

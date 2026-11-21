@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aror University | Campus Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+    <div class="nav-brand">
+        <img src="images/logo.jpg" alt="Aror University Logo" class="nav-logo">
+        <span>Aror University of Art, Architecture, Design and Heritage.</span>
+    </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="report.html">Report Item</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Aror University Campus Hub.</h1>
+            <p>Reclaim lost items, discover found treasures, and trade with your fellow students.</p>
+        </div>
+        <!-- REMINDER: Replace 'images/campus.jpg' with a real photo of Aror University campus -->
+        <img src="images/campus.jpg" alt="Aror University Main Campus Building" class="hero-img">
+    </header>
+
+    <!-- Filter & Search Controls -->
+    <section class="controls">
+        <h2>Search & Filter Items</h2>
+        <input type="text" id="searchInput" placeholder="Search by item name...">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="lost">Lost</button>
+            <button class="filter-btn" data-category="found">Found</button>
+            <button class="filter-btn" data-category="marketplace">Marketplace</button>
+        </div>
+    </section>
+
+    <!-- Dynamic Item Feed -->
+    <main class="item-grid" id="itemContainer">
+        <!-- Cards will be injected here by JavaScript -->
+        <p id="no-results" class="hidden">No items found matching your criteria.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Group Project: CSC101</h3>
+            <p><strong>Team Members:</strong></p>
+            <ul>
+                <li><strong>Muhammad Hassan Rajput</strong> -  SAP ID: 5000-208-12</li>
+                <li><strong>Mir Atif Ali </strong> - SAP ID: 5000-208-11</li>
+                <li><strong>Syed Tahzeeb Hyder</strong> - Roll No: 5000-204-29</li>
+                <li><strong>Uneeb Ali</strong> - Roll No: 5000-204-37</li>
+            </ul>
+            <p>&copy; 2026 Aror University Department of <strong>CYBER-SECURITY</strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

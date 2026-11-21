@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Catalog | Aror Uni Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="images/logo.jpg" alt="Aror University Logo" class="nav-logo" onerror="this.src='images/logo.png'; this.onerror=null;">
+            <span>Aror Uni Marketplace</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalog.html" class="active">Catalog</a></li>
+            <li><a href="report.html">Report Item</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+    </nav>
+
+<!-- Page Header -->
+    <section class="page-header">
+        <h1>Full Item Catalog</h1>
+        <p>Browse the complete database of items reported or listed by Aror University students.</p>
+    </section>
+
+    <!-- Data Table Section -->
+    <main class="table-container">
+        <h2>Active Listings</h2>
+        <div class="table-wrapper">
+            <table id="catalogTable">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Contact Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamically populated from localStorage by script.js -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Group Project: CSC101</h3>
+            <p><strong>Team Members:</strong></p>
+            <ul>
+                <li><strong>Muhammad Hassan Rajput</strong> -  SAP ID: 5000-208-12</li>
+                <li><strong>Mir Atif Ali </strong> - SAP ID: 5000-208-11</li>
+                <li><strong>Syed Tahzeeb Hyder</strong> - Roll No: 5000-204-29</li>
+                <li><strong>Uneeb Ali</strong> - Roll No: 5000-204-37</li>
+            </ul>
+            <p>&copy; 2026 Aror University Department of <strong>CYBER-SECURITY</strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
