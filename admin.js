@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const ADMIN_PASSCODE = 'aror123'; // Simple passcode for viva demonstration
+    const ADMIN_PASSCODE = 'aror@123,*'; // Simple passcode for viva demonstration
     const STORAGE_KEY = 'arorMarketItems';
 
     // Default fallback items matching main app
