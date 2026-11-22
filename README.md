@@ -69,7 +69,7 @@ Open in Browser:
 Double-click `index.html` or open it directly inside any modern web browser (Google Chrome, Microsoft Edge, Mozilla Firefox, Safari).
 ---
 🔐 Admin Dashboard Credentials
-Demo Passcode: `aror123`
+Demo Passcode: `**********`
 Access URL: Open `admin.html` in your browser.
 > **Note for Project Evaluators:** The passcode authorization uses `sessionStorage` for demonstration purposes during viva defense. In a cloud-deployed environment, authentication should be backed by server-side JWT tokens or hashed database credentials.
 ---
